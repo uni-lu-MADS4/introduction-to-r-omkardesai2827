@@ -1,6 +1,6 @@
 ---
 title: "Getting started with R"
-author: Your name here
+author: Omkar DEsai
 date: today
 format: html
 ---
@@ -11,50 +11,47 @@ format: html
 
 ```{r}
 # Your answer in code
-
+c("A", "B", "C")
 ```
 > Your answer as text
-
-
+I created a vector using built-in function c() and added A, B and C elements
 
 * Assign the vector to a variable `my_letters`
 ```{r}
 # Your answer in code
-
+my_letters <- c("A", "B", "C")
 ```
 
 
 * Check the what happens when you run `letters` (just this) on the command line.
 ```{r}
 # Your answer in code
-
+letters
 ```
 
 > Your answer as text
-
+Letters is a built-in vector that contains all alphabets
 
 
 * What happens when you concatenate two vectors? Add `c(my_letters , my_letters)`
 ```{r}
 # Your answer in code
-
+c(my_letters , my_letters)
 
 ```
 
 > Your answer as text
-
-
+When we use c() and provide to vectors in it then it gets concatenated 
 
 * Add the number 1 to letters. What happens to the type of the vector?
 ```{r}
 # Your answer in code
-
+letters+1
 
 ```
 
 > Your answer as text
-
-
+Here, letters in a vector of characters and when we try to add 1 which is of numeric type hence we are getting type error
 
 ### Exercise 2
 
@@ -65,6 +62,9 @@ format: html
 
 ```{r}
 # Your answer in code
+my_vec <- c(1:8)
+my_vec+2
+my_vec+c(1:4)
 
 
 
@@ -95,9 +95,13 @@ format: html
 
 ```{r}
 # Your answer in code
-
-
-
+matrix(data = c(4,1,9,5,10,7), nrow = 3, ncol = 2, byrow = TRUE )
+A <- matrix(data = c(4,1,9,5,10,7), nrow = 3, ncol = 2, byrow = TRUE )
+dim(A)
+A[2:2]
+A<-cbind(A,c(0,0,0))
+A[1:1]<-0
+t(A)
 
 
 
@@ -107,13 +111,13 @@ format: html
 8. Are any values in `A` larger than 10? 
 ```{r}
 # Your answer in code
-
+A[A>10]
 ```
 
 9. Are all values in `A` smaller than 10?
 ```{r}
 # Your answer in code
-
+A[A<10]
 ```
 
 ### Exercise 4
@@ -122,9 +126,9 @@ format: html
 
 ```{r}
 # Your answer in code
-
-
-
+adder_fun <- function(a,b) {as.numeric(a)+as.numeric(b)}
+adder_fun(10,3)
+adder_fun("Omkar","Desai")
 
 
 ```
@@ -136,8 +140,8 @@ format: html
 
 ```{r}
 # Your answer in code
-
-
+stats_fun <- function(a) {paste("mean:",mean(a), "median:",median(a), "sd:",sd(a))}
+stats_fun(c(1:10))
 
 ```
 
@@ -148,9 +152,8 @@ The output of `c('1' , "a", NA, "2", NA)` should be 2.
 
 ```{r}
 # Your answer in code
-
-
-
+vector<-c('1' , "a", NA, "2", NA)
+sum(is.na(vector))
 ```
 
 
